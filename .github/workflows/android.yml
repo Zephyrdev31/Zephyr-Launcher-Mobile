@@ -1,8 +1,6 @@
 name: Zephyr Launcher APK
 
-on:
-push:
-workflow_dispatch:
+on: [push, workflow_dispatch]
 
 permissions:
 contents: read
@@ -11,10 +9,9 @@ jobs:
 build:
 name: Build Android APK
 runs-on: ubuntu-latest
-
 steps:
-  - name: Get source code
-    uses: actions/checkout@v4
+- name: Get source code
+uses: actions/checkout@v4
 
   - name: Set up Java
     uses: actions/setup-java@v4
